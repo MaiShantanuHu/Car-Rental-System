@@ -1,5 +1,5 @@
 class Cars:
-	def __init__ (self, name, contact, email, timespan, cartype):
+	def __init__ (self, name, contact, email, timespan, cartype, show_inventory):
 		self.name = name
 		self.contact = contact
 		self.email = email
@@ -11,12 +11,12 @@ class Cars:
 				"Prime": 8}
 		self.inventory = show_inventory
 
-        #def inventory(self):
-               # if (self.inventory == 'Y'):
-                 #       for i in self.quantity:
-                     #           print(i, self.quantity[i])
-                #else:
-                    #    continue
+        def inventory(self):
+                if (self.inventory == 'Y'):
+                        for i in self.quantity:
+                                print(i, self.quantity[i])
+                else:
+                        pass
 
 	def cartype(self):
 		
@@ -56,6 +56,6 @@ email = input("Enter your Email ID: ")
 timespan = int(input("Enter number of hours you want to rent the car: "))
 cartype = input("Enter type of car you want to rent (MINI, SUV, Prime): ").upper()
 show_inventory = input("Do you want to check the available cars and their quantity").upper()
-c1 = Cars(name, contact, email, timespan, cartype)
+c1 = Cars(name, contact, email, timespan, cartype, show_inventory)
 c1.cartype()
 c1.bill()
